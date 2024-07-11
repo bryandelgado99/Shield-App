@@ -43,36 +43,28 @@ class _ListapageState extends State<Listapage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 165, 42, 33),
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-              bottomRight: Radius.circular(25),
-              bottomLeft: Radius.circular(25),
-            ),
-          ),
-          title: const Text(
-            "Shield-Pad",
-            style: TextStyle(color: Colors.white),
-          ),
-          leading: Image.asset(
-            'assets/marvel-shield-svgrepo-com.png',
-            scale: 8,
-            color: Colors.white,
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 165, 42, 33),
+        title: const Text(
+          "Shield-Pad",
+          style: TextStyle(color: Colors.white),
         ),
-        body: SingleChildScrollView(
-          child: bodyPage(),
+        leading: Image.asset(
+          'assets/marvel-shield-svgrepo-com.png',
+          scale: 8,
+          color: Colors.white,
         ),
+      ),
+      body: SingleChildScrollView(
+        child: bodyPage(),
       ),
     );
   }
 
   Widget bodyPage() {
     if (isLoading) {
-      return Center(child: CircularProgressIndicator());
+      return Center(child: LinearProgressIndicator());
     } else {
       return Container(
         padding: const EdgeInsets.all(15.0),

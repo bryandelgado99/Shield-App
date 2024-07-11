@@ -39,7 +39,7 @@ class CharacterService {
   }
 
   Future<Character> fetchSpiderman() async {
-    const spidermanUrl = '$spider_URL?nameStartsWith=Spider&$key';
+    const spidermanUrl = '$spider_URL?nameStartsWith=Sp&$key';
     final response = await http.get(Uri.parse(spidermanUrl));
 
     if (response.statusCode == 200) {

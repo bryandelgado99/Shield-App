@@ -1,6 +1,8 @@
 // ignore_for_file: use_build_context_synchronously
 import 'package:api_app/views/components/cardSkelleton.dart';
 import 'package:api_app/views/partials/CharactersPage.dart';
+import 'package:api_app/views/partials/ComicsPage.dart';
+import 'package:api_app/views/partials/EventsPage.dart';
 import 'package:flutter/material.dart';
 
 class Categorycards extends StatelessWidget {
@@ -30,7 +32,12 @@ class Categorycards extends StatelessWidget {
           child: Cardskelleton(
             title: 'Comics',
             imagePath: 'assets/comics.jpg',
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Comicspage()),
+              );
+            },
           ),
         ),
         Expanded(
@@ -38,7 +45,12 @@ class Categorycards extends StatelessWidget {
           child: Cardskelleton(
             title: 'Eventos',
             imagePath: 'assets/villanos.jpg',
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Eventspage()),
+              );
+            },
           ),
         ),
       ],
